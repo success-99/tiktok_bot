@@ -8,7 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-youtube/
+youtube.py
 build/
 develop-eggs/
 dist/
