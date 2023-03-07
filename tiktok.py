@@ -1,3 +1,4 @@
+# link = 'https://www.tiktok.com/@uzbek__777/video/7065192361701199105'
 def tiktokdow(link):
     import requests
     import json
@@ -16,4 +17,7 @@ def tiktokdow(link):
     if 'error' in natija:
         return 'bed'
     else:
+        # return natija['vidio'][0]
+        # return {'vidio': natija['video'][0]}
         return natija['video'][0]
+# print(tiktokdow())
