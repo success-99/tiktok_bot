@@ -1,22 +1,23 @@
-import requests
-import json
+# link = 'https://www.tiktok.com/@uzbek__777/video/7065192361701199105'
+def tiktokdow(link):
+    import requests
+    import json
+    url = "https://tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com/vid/index"
 
-
-def tiktokdow(link1):
-    url = "https://aiov-download-youtube-videos.p.rapidapi.com/GetVideoDetails"
-
-    querystring = {"URL": link1}
+    querystring = {"url": link}
 
     headers = {
-        "X-RapidAPI-Key": '7452d0fd62msh95c522a9192162dp1c311bjsn64b7eb00230d',
-        "X-RapidAPI-Host": "aiov-download-youtube-videos.p.rapidapi.com"
+        "X-RapidAPI-Key": "639d77ff43msh31402ee7dc2d76cp188caejsndaca568262c4",
+        "X-RapidAPI-Host": "tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com"
     }
 
     response = requests.request("GET", url, headers=headers, params=querystring)
-    natija = json.loads(response.text)
+    f = response.text
+    natija = json.loads(f)
     if 'error' in natija:
         return 'bed'
     else:
-        for i in natija['formats']:
-            if i['format_note'] == 'Playback video':
-                return i['url']
+        # return natija['vidio'][0]
+        # return {'vidio': natija['video'][0]}
+        return natija['video'][0]
+# print(tiktokdow())
