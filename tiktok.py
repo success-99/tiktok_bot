@@ -21,3 +21,4 @@ def tiktokdow(link):
         for i in natija['formats']:
             if i['format_note'] == "Playback video":
                 return i['url']
+
